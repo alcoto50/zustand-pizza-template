@@ -4,13 +4,8 @@ import { useStore } from './store';
 import { Link } from 'react-router-dom';
 import wireframe from './wireframe.png';
 
-<div>
-    <h1>Customer Information</h1>
-    <h2>pizza</h2>
-</div>
-
 const custInfo = () => {
-    const [customerInfo, setCustomerInfo] = useState({
+    const [customerInfo, setCustomerInfo] = useStore({
         customer_name: '',
         street_address:'',
         city: '',
@@ -18,7 +13,7 @@ const custInfo = () => {
         type: 'pickup',
     });
     
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useStore(0);
 
     const handleChange = (e) => {
         setCustomerInfo({

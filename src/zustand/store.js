@@ -1,8 +1,8 @@
 import { create } from 'zustand';
-import useStore from "./store";
+
 import axios from 'axios';
 
-const userStore = create((set) => ({
+const useStore = create((set) => ({
     cart: [],
     total: 0,
     customer: { name: '', address: '', phone: '' },
@@ -18,8 +18,8 @@ const userStore = create((set) => ({
         catch (error) {
             console.error(error);
         }
-    }
-}))
+    },
+//}))
 
     addToCart: (pizza) =>
         set((state) => {
@@ -36,5 +36,5 @@ const userStore = create((set) => ({
     clearCart: () => set({ cart: [], total: 0 }),
 }));
 
-export default userStore;
+export default useStore;
 
