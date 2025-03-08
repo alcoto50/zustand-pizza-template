@@ -1,6 +1,7 @@
 import './App.css';
 import useStore from '../../zustand/store';
 
+
 function App() {
   const addPizzaToCart = (pizza) => {
     useStore.getState().addToCart(pizza);
