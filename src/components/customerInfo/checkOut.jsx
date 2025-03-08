@@ -2,6 +2,7 @@ import {useState} from 'react';
 import userStore from '../state/store';
 
 
+
 const CheckOut = ({ custInfo, pizzas, onSubmit, clearCart, navigateToPizzaPage}) => {
     const handleSubmit = (E) => {
         e.preventDefault();
