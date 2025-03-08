@@ -1,13 +1,13 @@
-import '../App.css';
-import userStore from '../state/store';
+import './App.css';
+import useStore from '../../zustand/store';
 
 function App() {
   const addPizzaToCart = (pizza) => {
-    userStore.getState().addToCart(pizza);
+    useStore.getState().addToCart(pizza);
   };
 
-  const total = userStore((state) => state.total);
-  const updateCustomer = userStore((state) => state.updateCustomer);
+  const total = useStore((state) => state.total);
+  const updateCustomer = useStore((state) => state.updateCustomer);
 
   return (
     <div className="App">
