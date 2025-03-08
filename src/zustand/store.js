@@ -1,9 +1,25 @@
 import { create } from 'zustand';
 
-const userStore = create((set) => ({
+import axios from 'axios';
+
+const useStore = create((set) => ({
     cart: [],
     total: 0,
     customer: { name: '', address: '', phone: '' },
+    fetchcart: async () => {
+        try {
+            const response = await axios.get(
+                'http://localhost:3001/cart');
+            
+            const cart = response.data;
+            console.log('cart', response.data);
+            set({ cart: response.data });
+        }
+        catch (error) {
+            console.error(error);
+        }
+    },
+//}))
 
     addToCart: (pizza) =>
         set((state) => {
@@ -20,5 +36,5 @@ const userStore = create((set) => ({
     clearCart: () => set({ cart: [], total: 0 }),
 }));
 
-export default userStore;
+export default useStore;
 
