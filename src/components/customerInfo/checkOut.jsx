@@ -4,7 +4,7 @@ import userStore from '../state/store';
 
 
 const CheckOut = ({ custInfo, pizzas, onSubmit, clearCart, navigateToPizzaPage}) => {
-    const handleSubmit = (E) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const order = {
             customer_name: '',
